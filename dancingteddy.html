@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>teddy</title>
+	<style>
+		.container{
+			width: 300px;
+			height: 360px;
+			position: relative;
+			top: 50%;
+			left:0;
+			transform: translate(50%, 50%);
+			background-color: #fff;
+			bottom: 70px;
+		}
+		.body{
+			width: 160px;
+			height: 200px;
+			background-color: #e67418;
+			position: absolute;
+			left: calc(50% - 80px);
+			border-radius: 45%;
+			bottom: 30px;
+		}
+		.body::after{
+			content: "";
+			position: absolute;
+			width: 100px;
+			height: 140px;
+			background-color: #f0a060;
+			left: calc(50% - 49px);
+			border-radius: 45%;
+			bottom: 40px;
+
+		}
+		.face{
+			width: 200px;
+			height: 153px;
+			border-radius: 50%;
+			background-color: #e67418;
+			position: absolute;
+			left: calc(50% - 100px);
+			top: 10px;
+		}
+		.face::after{
+			content: "";
+			position: absolute;
+			width: 30px;
+			height: 30px;
+			border-radius: 50%;
+			background-color: #9b4805;
+			box-shadow: 0px 0px 0px 15px #e67418;
+			top: 10px;
+			left:calc(50% - 90px);
+		}
+		.face::before{
+			content: "";
+			position: absolute;
+			width: 30px;
+			height: 30px;
+			border-radius: 50%;
+			background-color: #9b4805;
+			box-shadow: 0px 0px 0px 15px #e67418;
+			top: 10px;
+			right:calc(50% - 90px);
+		}
+		.foot::after{
+			content: "";
+			position: absolute;
+			width: 40px;
+			height: 55px;
+			border-radius: 50%;
+			background-color: #9b4805;
+			box-shadow: 0px 0px 0px 16px #e67418;
+			bottom: 30px;
+			left:calc(50% - 100px);
+			transform:rotate(-30deg);
+		}
+		.foot::before{
+			content: "";
+			position: absolute;
+			width: 40px;
+			height: 55px;
+			border-radius: 50%;
+			background-color: #9b4805;
+			box-shadow: 0px 0px 0px 16px #e67418;
+			bottom: 30px;
+			right:calc(50% - 100px);	
+			transform:rotate(30deg);
+			 animation-name: leg-back;
+  animation-duration: .2s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+		}
+		.hand-left{
+			width: 100px;
+			height: 40px;
+			background-color: #e67418;
+			position: absolute;
+			top: calc(50%);
+			left: 20px;
+			border-radius: 20px;
+			transform: rotate(20deg);
+		}
+		.hand-left::after{
+		   content: "";
+			position: absolute;
+			width: 30px;
+			height: 30px;
+			border-radius: 50%;
+			background-color: #9b4805;
+			top: 5px;
+			left: 5px;	
+		}
+		.hand-right{
+			width: 100px;
+			height: 40px;
+			background-color: #e67418;
+			position: absolute;
+			top: calc(50%);
+			right: 20px;
+			border-radius: 20px;
+			transform: rotate(-20deg);
+		}	
+		.hand-right::after{
+		    content: "";
+			position: absolute;
+			width: 30px;
+			height: 30px;
+			border-radius: 50%;
+			background-color: #9b4805;
+			top: 5px;
+			right: 5px;	
+		}
+		.mukh{
+			width: 100px;
+			height: 70px;
+			position: absolute;
+			background-color: #f0a060;
+			left: calc(50% - 50px);
+			bottom: 215px;
+			border-radius: 50%;
+		}
+		.mukh::after{
+			content: "";
+			position: absolute;
+			width: 30px;
+			height: 25px;
+			border-radius: 50%;
+			left: calc(50% - 15px);
+			top: 10px;
+			background-color: #111;
+		}
+		.mukh::before{
+			content: "";
+			position: absolute;
+			width: 50px;
+			height: 40px;
+			border-radius: 50%;
+			left: calc(50% - 25px);
+			top: 10px;
+			border-bottom: 4px solid #111;
+		}
+		.naina{
+			width: 7px;
+			height: 6px;
+			position: absolute;
+			background-color: #f0a060;
+			left: calc(49%);
+			bottom: 260px;
+			border-radius: 50%;
+		}
+		.naina::after{
+			content: "";
+			position: absolute;
+			width: 20px;
+			height: 20px;
+			border-radius: 50%;
+			left: -40px;
+			top: -40px;
+			background-color: #111;
+		}
+		.naina::before{
+			content: "";
+			position: absolute;
+			width: 20px;
+			height: 20px;
+			border-radius: 50%;
+			right: -40px;
+			top: -40px;
+			background-color: #111;
+		}
+		.dancing-animation{
+		width: 675px;
+		height: 400px;
+		margin-top: 70px; 
+		animation:dancing 4s steps(23, start) infinite, movearound 12s steps(70, end) infinite alternate 44ms;
+			animation-direction: normal, alternate;
+
+		}
+		@keyframes dancing{
+			0%{background-position: 0 0; }
+			100%{background-position:-5175px 0; }
+		}
+		@keyframes movearound{
+			0%{transform: translateX(0);}
+			100%{transform: translateX(600px);}
+		}
+		.lefthand-animation{
+		width: 675px;
+		height: 400px;
+		margin-top: 70px; 
+		animation:dancing 4s steps(23, start) infinite, movearound 12s steps(70, end) infinite alternate 44ms;
+			animation-direction: normal, alternate;
+
+		}
+		@keyframes dancing{
+			0%{background-position: 0 0; }
+			100%{background-position:-5175px 0; }
+		}
+		@keyframes movearound{
+			0%{transform: translateY(0);}
+			100%{transform: translateY(10px);}
+		}
+	</style>
+</head>
+<body>
+<div class="dancing-animation">
+
+<div class="container">
+	<div class="lefthand-animation">
+
+	<div class="hand-left"></div></div>
+	<div class="hand-right"></div>
+	<div class="body"></div>
+	<div class="face"></div>
+	<div class="mukh"></div>
+	<div class="naina"></div>
+	<div class="foot"></div>
+</div>
+</div>
+</body>
+</html>
