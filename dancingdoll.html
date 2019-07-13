@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Dancing Animation</title>
+	<style>
+		.dancing-animation{
+		width: 675px;
+		height: 400px;
+		margin-top: 70px; 
+		background:url("dancing.png");
+		animation:dancing 4s steps(23, start) infinite, movearound 12s steps(70, end) infinite alternate 44ms;
+			animation-direction: normal, alternate;
+		}
+		@keyframes dancing{
+			0%{background-position: 0 0; }
+			100%{background-position:-5175px 0; }
+		}
+		@keyframes movearound{
+			0%{transform: translateX(0);}
+			100%{transform: translateX(600px);}
+		}
+	</style>
+</head>
+<body>
+<div class="dancing-animation"></div>
+</body>
+</html>
